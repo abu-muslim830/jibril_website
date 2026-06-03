@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jibril A Sadiq General Enterprises</title>
+    <style>
+        /* Modern CSS Reset & Variable Theme Colors */
+        :root {
+            --primary: #0f172a; /* Deep Navy */
+            --accent: #d97706;  /* Professional Gold/Amber */
+            --bg-light: #f8fafc; /* Clean Light Gray */
+            --text-dark: #1e293b;
+            --text-muted: #64748b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: #ffffff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.4rem;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            margin-left: 2rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #ffffff;
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #94a3b8;
+            margin-bottom: 2.5rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent);
+            color: #ffffff;
+            padding: 0.8rem 2rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .cta-button:hover {
+            background-color: #b45309;
+            transform: translateY(-2px);
+        }
+
+        /* Global Section Titles */
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: var(--accent);
+            margin: 0.5rem auto 0 auto;
+            border-radius: 2px;
+        }
+
+        /* Services Section */
+        .services {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .service-card {
+            background-color: #ffffff;
+            padding: 2.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -1px rgba(0,0,0,0.03);
+            border-top: 4px solid var(--primary);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+            border-top-color: var(--accent);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: var(--text-muted);
+        }
+
+        /* Prices Section (Table layout) */
+        .prices-section {
+            background-color: #ffffff;
+            padding: 5rem 2rem;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .prices-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .price-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .price-table th, .price-table td {
+            padding: 1rem 1.5rem;
+            text-align: left;
+        }
+
+        .price-table th {
+            background-color: var(--primary);
+            color: white;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+        }
+
+        .price-table tr {
+            border-bottom: 1px solid #e2e8f0;
+            background-color: #ffffff;
+        }
+
+        .price-table tr:nth-child(even) {
+            background-color: #f8fafc;
+        }
+
+        .price-table tr:hover {
+            background-color: #f1f5f9;
+        }
+
+        .price-tag {
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        /* Blog Section */
+        .blog-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .blog-card {
+            background-color: #ffffff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+            border: 1px solid #e2e8f0;
+        }
+
+        .blog-content {
+            padding: 1.5rem;
+        }
+
+        .blog-date {
+            font-size: 0.85rem;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+        }
+
+        .blog-content h3 {
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+        }
+
+        .blog-content p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+        .blog-content p span {
+            color: var(--accent);
+        }
+
+        /* Contact Section */
+        .contact {
+            background-color: #ffffff;
+            padding: 5rem 2rem;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .contact-container {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-info {
+            margin-top: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .contact-item strong {
+            color: var(--primary);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary);
+            color: #94a3b8;
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+            border-top: 1px solid #1e293b;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .nav-links a {
+                margin: 0 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo">Jibril A Sadiq <span>General Enterprises</span></div>
+            <nav class="nav-links">
+                <a href="#hero">Home</a>
+                <a href="#services">Services</a>
+                <a href="#prices">Prices</a>
+                <a href="#blog">Blog</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <h1>Your Everyday Convenience </h1>
+            <p>Providing seamless financial services, takeaways, and crisp refreshments all under one roof. We look forward to serving you!</p>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <h2 class="section-title">Our Core Services</h2>
+        <div class="services-grid">
+            
+            <div class="service-card">
+                <div class="service-icon">💳</div>
+                <h3>POS & Financial Services</h3>
+                <p>Enjoy secure and rapid transactions right in your neighborhood. Come to us for stress-free cash deposits, withdrawals, and easy utility bill payments.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🥤</div>
+                <h3>Chilled Soft Drinks</h3>
+                <p>Beat the heat with our wide selection of ice-cold sodas, juices, and refreshing soft drinks such as Coca-Cola, Pop Cola, energy drinks, etc., kept perfectly chilled for your enjoyment.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="prices-section" id="prices">
+        <div class="prices-container">
+            <h2 class="section-title">Service & Item Pricing</h2>
+            <p style="text-align: center; color: var(--text-muted); margin-bottom: 1.5rem;">Clear, affordable pricing with no hidden charges.</p>
+            
+            <table class="price-table">
+                <thead>
+                    <tr>
+                        <th>Service / Item Name</th>
+                        <th>Description</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>POS Withdrawal (Standard)</strong></td>
+                        <td>Cash withdrawal service up to ₦5,000</td>
+                        <td class="price-tag">₦100</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Coca-Cola / Pop Cola</strong></td>
+                        <td>Chilled plastic bottle (50cl-60cl)</td>
+                        <td class="price-tag">₦250</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Energy Drinks</strong></td>
+                        <td>Ice-cold premium canned energy drinks</td>
+                        <td class="price-tag">₦750</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Daily Takeaway Meal</strong></td>
+                        <td>A plate makes for events</td>
+                        <td class="price-tag">₦150</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="blog-section" id="blog">
+        <h2 class="section-title">Latest Updates & Blog</h2>
+        <div class="blog-grid">
+            
+            <div class="blog-card">
+                <div class="blog-content">
+                    <div class="blog-date">May 26, 2026</div>
+                    <h3>New Soft Drink Stock!</h3>
+                    <p>We just filled our coolers with freshly delivered Pop Cola, Coca-Cola, and premium energy drinks. Stop by Sabuwar Kasuwa to beat the heat today!</p>
+                </div>
+            </div>
+
+            <div class="blog-card">
+                <div class="blog-content">
+                    <div class="blog-date">May 15, 2026</div>
+                    <h3>Fast & Reliable POS Services</h3>
+                    <p>Avoid long ATM lines! Our POS terminal is active with stable networks all day for quick cash transfers, deposits, and smooth utility bill processing.</p>
+                </div>
+            </div>
+
+            <div class="blog-card">
+                <div class="blog-content">
+                    <div class="blog-date">May 27, 2026</div>
+                    <h3>Eid-Al Adha celebration</h3>
+                    <p>There will be discount of 30% for our beloved customers on the day of <span>EID</span></p>
+                    <p><span>EID-UN MUBARAK</span></p> 
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="contact-container">
+            <h2 class="section-title">Visit or Contact Us</h2>
+            <p>Have questions about what we have in stock today? Stop by or reach out through our channels below.</p>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <strong>📍 Address:</strong> Sabuwar Kasuwa Garin Gusau Zamfara State
+                </div>
+                <div class="contact-item">
+                    <strong>📞 Phone:</strong> +234 8105307639
+                </div>
+                <div class="contact-item">
+                    <strong>⏰ Hours:</strong> Monday - Sunday (9:00 AM - 7:00 PM)
+                </div>
+            </div>
+
+            <button id="show-form-btn" class="cta-button" style="margin-top: 2rem; border: none; cursor: pointer;">
+                Write Us a Message
+            </button>
+
+            <form id="contact-form" style="margin-top: 2rem; display: none; flex-direction: column; gap: 1rem; text-align: left;">
+                <h3 style="color: var(--primary); margin-bottom: 0.5rem; text-align: center;">Send Us a Message</h3>
+                
+                <input type="text" id="name" placeholder="Your Name" required style="padding: 0.8rem; border: 1px solid #cbd5e1; border-radius: 4px; font-family: inherit;">
+                <input type="text" id="phone" placeholder="Your Phone Number" required style="padding: 0.8rem; border: 1px solid #cbd5e1; border-radius: 4px; font-family: inherit;">
+                <textarea id="message" rows="4" placeholder="How can we help you?" required style="padding: 0.8rem; border: 1px solid #cbd5e1; border-radius: 4px; font-family: inherit; resize: vertical;"></textarea>
+                
+                <button type="submit" class="cta-button" style="border: none; cursor: pointer; width: 100%; margin-top: 0.5rem;">Send Message</button>
+                <div id="form-status" style="text-align: center; margin-top: 1rem; font-weight: 600; color: #15803d; display: none;">Message sent successfully!</div>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Jibril A Sadiq General Enterprises. All rights reserved.</p>
+    </footer>
+
+    <script src="SCRIPT.JS"></script>
+</body>
+</html>
